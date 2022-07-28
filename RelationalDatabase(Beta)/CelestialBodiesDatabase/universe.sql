@@ -172,3 +172,23 @@ VALUES
   (1, 'Black Hole 1', 1231231, 'Description'),
   (2, 'Black Hole 2', 1231231, 'Description'),
   (3, 'Black Hole 3', 1231231, 'Description');
+  
+  CREATE TABLE
+  white_hole(
+    white_hole_id SERIAL PRIMARY KEY,
+    galaxy_id INT,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    age_in_millions_of_years NUMERIC,
+    description TEXT,
+    FOREIGN KEY(galaxy_id) REFERENCES galaxy(galaxy_id)
+  );
+
+INSERT INTO
+  white_hole (
+    galaxy_id,
+    name,
+    age_in_millions_of_years,
+    description
+  )
+VALUES
+  (1, 'White Hole 1', 1231231, 'Theoretically, a white hole consists of a kind of "tunnel" that connects two opposite sides of outer space, if something enters one end of the "channel" it will immediately reach the other part.');
