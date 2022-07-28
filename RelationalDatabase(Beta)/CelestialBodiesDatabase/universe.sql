@@ -1,3 +1,7 @@
+CREATE DATABASE universe;
+
+\c universe;
+
 CREATE TABLE
   galaxy (
     galaxy_id SERIAL PRIMARY KEY,
